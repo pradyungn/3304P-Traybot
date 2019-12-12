@@ -8,5 +8,6 @@ using namespace okapi;
 extern Motor intaker, intakel, tray1, tray2;
 extern MotorGroup tray, intake;
 extern ChassisControllerPID drivetrain;
+extern AsyncPosPIDController tPID;
 
 #endif

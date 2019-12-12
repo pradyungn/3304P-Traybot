@@ -30,7 +30,7 @@ void autonomous() {//Actual auton code: 5 point blue
 	drivetrain.setMaxVelocity(150);
 	drivetrain.moveDistance(500);	
 										*/
-								
+
 	tray.setBrakeMode(Motor::brakeMode::brake);//Setting brake mode of lift to brake, opposed to the default coast.
 
 	intake.setBrakeMode(Motor::brakeMode::brake);//Setting brake mode of claw to brake, for accurate grabbing

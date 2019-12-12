@@ -1,6 +1,23 @@
 #include "main.h"
 using namespace okapi;
 
+class turnOut: public ControllerOutput<double> {//subclassing the ControllerOutput class to rotate chassis
+  public:
+  
+	virtual void controllerSet(double ivalue) override {
+    	drivetrain.rotate(ivalue);
+		controllerSet(ivalue);
+  	}
+};
+
+
+//Turn Gyro PID
+
+double tkP = 0.02;
+double tkI = 0;
+double tkD = 0;
+AsyncPosPIDController tPID = AsyncControllerFactory::posPID(std::make_shared<ADIGyro>(ADIGyro('A')), std::make_shared<turnOut>(turnOut()), tkP, tkI,tkD, 0,std::move(std::make_unique<PassthroughFilter>()), TimeUtilFactory::create());
+
 Motor intaker(5, false, Motor::gearset::green);//Initializing motors
 Motor intakel(6, true, Motor::gearset::green);
 
