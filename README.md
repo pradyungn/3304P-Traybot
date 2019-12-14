@@ -7,5 +7,5 @@
 * Descore Macro
 
 ## Requirements
--PROS 3.20
--Okapi 4
+* PROS 3.20
+* Okapi 4
